@@ -7,10 +7,22 @@ export default createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
-        outline:0;
-        box-sizing:border-box;
-        font-family: 'Open Sans', sans-serif; 
+        outline: 0;
+        box-sizing: border-box;
     }
-    #root{
-        margin:0 auto;
-    }`
+
+    html {
+        font-size: 16px;
+    }
+    
+    #root {
+        margin: 0 auto;
+    }
+    
+    body {
+        font-family: ${({ theme }) => theme.fonts}, sans-serif;
+        font-size: ${({ theme }) => theme.fontSizes.medium};
+        color: ${({ theme }) => theme.colors.main};
+        background-color: ${({ theme }) => theme.colors.secondary};
+    }
+`

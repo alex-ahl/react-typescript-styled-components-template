@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
     "lib": ["esnext", "dom", "dom.iterable"],
@@ -15,7 +15,9 @@
     "moduleResolution": "node",
     "downlevelIteration": true,
     "paths": {
-      "components/*": ["src/components/*"]
+      "components/*": ["src/components/*"],
+      "assets/*": ["src/assets/*"],
+      "styles/*": ["src/styles/*"]
     }
   },
   "include": ["./src", "./webpack.config.ts"]
