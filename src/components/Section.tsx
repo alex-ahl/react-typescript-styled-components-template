@@ -2,6 +2,8 @@ import { FC } from 'react'
 import styled from 'styled-components'
 import { baseHeightStyles } from 'styles/styles'
 
+import image from 'assets/images/cabin1_1920_2400.jpg'
+
 const Section: FC = () => {
   return (
     <Container>
@@ -11,7 +13,9 @@ const Section: FC = () => {
           <Text>Text1</Text>
         </TextWrapper>
       </Left>
-      <Right>Test1</Right>
+      <Right>
+        <img src={image} alt="image" />;
+      </Right>
     </Container>
   )
 }
