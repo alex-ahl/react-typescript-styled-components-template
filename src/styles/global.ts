@@ -12,12 +12,11 @@ export default createGlobalStyle`
     }
 
     html {
+        scroll-snap-type: y mandatory;
         font-size: 16px;
     }
     
-    #root {
-        margin: 0 auto;
-    }
+
     
     body {
         font-family: ${({ theme }) => theme.fonts}, sans-serif;
@@ -25,4 +24,6 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.colors.main};
         background-color: ${({ theme }) => theme.colors.secondary};
     }
+
+
 `
