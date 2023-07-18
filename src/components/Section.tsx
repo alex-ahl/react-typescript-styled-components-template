@@ -1,21 +1,18 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+
 import { baseHeightStyles } from 'styles/styles'
 
-import image from 'assets/images/cabin1_1920_2400.jpg'
+interface SectionProps {
+  contentLeft: ReactNode
+  contentRight: ReactNode
+}
 
-const Section: FC = () => {
+const Section: FC<SectionProps> = ({ contentLeft, contentRight }) => {
   return (
     <Container>
-      <Left>
-        <TextWrapper>
-          <Headline>Text</Headline>
-          <Text>Text1</Text>
-        </TextWrapper>
-      </Left>
-      <Right>
-        <img src={image} alt="image" />;
-      </Right>
+      <Content>{contentLeft}</Content>
+      <Content>{contentRight}</Content>
     </Container>
   )
 }
@@ -23,37 +20,18 @@ const Section: FC = () => {
 const Container = styled.div`
   ${baseHeightStyles}
 
-  border: 3px solid green;
-
   display: flex;
-  flex-flow: row nowrap;
+  scroll-snap-align: start;
 `
 
-const Left = styled.div`
-  border: 3px solid red;
-  flex-grow: 1;
+const Content = styled.div`
+  flex-basis: 50%;
+  flex-grow: 0;
 
   display: flex;
   justify-content: center;
 
   font-size: ${({ theme }) => theme.fontSizes.medium};
-`
-
-const TextWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`
-
-const Headline = styled.h2``
-
-const Text = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.small};
-`
-
-const Right = styled.div`
-  border: 3px solid blue;
-  flex-grow: 1;
 `
 
 export default Section
