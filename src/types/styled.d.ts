@@ -15,6 +15,14 @@ declare module 'styled-components' {
     }
     fonts: string[]
     fontSizes: {
+      extraSmall: string
+      small: string
+      medium: string
+      large: string
+      extraLarge: string
+    }
+    fontWeights: { regular: number; light: number }
+    imageSizes: {
       small: string
       medium: string
       large: string
@@ -23,7 +31,7 @@ declare module 'styled-components' {
 }
 
 declare module 'react' {
-  interface Attributes {
+  export interface Attributes {
     css?: CSSProp | typeof CSSObject
   }
 }
