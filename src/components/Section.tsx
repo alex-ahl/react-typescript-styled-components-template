@@ -8,7 +8,7 @@ interface SectionProps {
   contentRight: ReactNode
 }
 
-const Section: FC<SectionProps> = ({ contentLeft, contentRight }) => {
+export const Section: FC<SectionProps> = ({ contentLeft, contentRight }) => {
   return (
     <Container>
       <Content>{contentLeft}</Content>
@@ -33,5 +33,3 @@ const Content = styled.div`
 
   font-size: ${({ theme }) => theme.fontSizes.medium};
 `
-
-export default Section
