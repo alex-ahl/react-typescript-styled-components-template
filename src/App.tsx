@@ -15,16 +15,20 @@ const App: FC = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Section
-      contentLeft={<Text headline={c.SHORT_TEXT} introduction={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
-      contentRight={
-        <StyledImage small={i.smallImage1} medium={i.mediumImage1} large={i.largeImage1} alt={c.SHORT_TEXT} />
-      }
+      left={<Text headline={c.SHORT_TEXT} intro={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
+      right={<StyledImage small={i.smallImage1} medium={i.mediumImage1} large={i.largeImage1} alt={c.SHORT_TEXT} />}
     />
     <Section
-      contentLeft={
-        <StyledImage small={i.smallImage2} medium={i.mediumImage2} large={i.largeImage2} alt={c.SHORT_TEXT} />
-      }
-      contentRight={<Text headline={c.SHORT_TEXT} introduction={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
+      left={<StyledImage small={i.smallImage2} medium={i.mediumImage2} large={i.largeImage2} alt={c.SHORT_TEXT} />}
+      right={<Text headline={c.SHORT_TEXT} intro={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
+    />
+    <Section
+      left={<Text headline={c.SHORT_TEXT} intro={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
+      right={<StyledImage small={i.smallImage1} medium={i.mediumImage1} large={i.largeImage1} alt={c.SHORT_TEXT} />}
+    />
+    <Section
+      left={<StyledImage small={i.smallImage2} medium={i.mediumImage2} large={i.largeImage2} alt={c.SHORT_TEXT} />}
+      right={<Text headline={c.SHORT_TEXT} intro={c.MEDIUM_TEXT} text={c.LONG_TEXT} />}
     />
   </ThemeProvider>
 )

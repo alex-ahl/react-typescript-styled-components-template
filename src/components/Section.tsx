@@ -1,18 +1,19 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { device } from 'styles/breakpoints'
 
 import { baseHeightStyles } from 'styles/styles'
 
 interface SectionProps {
-  contentLeft: ReactNode
-  contentRight: ReactNode
+  left: ReactNode
+  right: ReactNode
 }
 
-export const Section: FC<SectionProps> = ({ contentLeft, contentRight }) => {
+export const Section: FC<SectionProps> = ({ left, right }) => {
   return (
     <Container>
-      <Content>{contentLeft}</Content>
-      <Content>{contentRight}</Content>
+      <Content>{left}</Content>
+      <Content>{right}</Content>
     </Container>
   )
 }
@@ -22,6 +23,17 @@ const Container = styled.div`
 
   display: flex;
   scroll-snap-align: start;
+
+  @media only screen and (${device.xl}) {
+    scroll-snap-align: initial;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    &:nth-child(2n + 2) {
+      flex-direction: column-reverse;
+    }
+  }
 `
 
 const Content = styled.div`
@@ -32,4 +44,9 @@ const Content = styled.div`
   justify-content: center;
 
   font-size: ${({ theme }) => theme.fontSizes.medium};
+
+  @media only screen and (${device.xl}) {
+    min-height: inherit;
+    scroll-snap-align: start;
+  }
 `

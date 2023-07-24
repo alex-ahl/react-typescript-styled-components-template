@@ -20,8 +20,9 @@ const Image: FC<ImageProps> = ({ small, medium, large, ...props }) => {
 }
 
 export const StyledImage = styled(Image)`
-  height: 0;
+  height: 100vh;
   min-height: 100%;
   min-width: 100%;
-  object-fit: stretch;
+  object-fit: cover;
+  object-position: 50% 50%;
 `

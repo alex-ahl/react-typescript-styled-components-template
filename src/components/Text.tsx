@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 interface TextProps {
   headline: string
-  introduction: string
+  intro: string
   text: string
 }
 
-export const Text: FC<TextProps> = ({ headline, introduction, text }) => {
+export const Text: FC<TextProps> = ({ headline, intro, text }) => {
   return (
     <TextWrapper>
       <Headline>{headline}</Headline>
-      <Introduction>{introduction}</Introduction>
+      <Introduction>{intro}</Introduction>
       <TextStyle>{text}</TextStyle>
     </TextWrapper>
   )
@@ -21,6 +21,7 @@ const TextWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 30px;
 `
 
 const Headline = styled.h2`
