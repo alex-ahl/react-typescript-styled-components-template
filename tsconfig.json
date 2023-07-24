@@ -24,7 +24,12 @@
       "components/*": ["src/components/*"],
       "assets/*": ["src/assets/*"],
       "styles/*": ["src/styles/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@styled/typescript-styled-plugin"
+      }
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
