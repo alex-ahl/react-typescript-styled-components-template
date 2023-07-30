@@ -15,13 +15,15 @@ declare module 'styled-components' {
     }
     fonts: string[]
     fontSizes: {
-      extraSmall: string
+      xxs: string
+      xs: string
       small: string
       medium: string
       large: string
-      extraLarge: string
+      xl: string
+      xxl: string
     }
-    fontWeights: { regular: number; light: number }
+    fontWeights: { light: number; regular: number; bold: number }
     imageSizes: {
       small: string
       medium: string

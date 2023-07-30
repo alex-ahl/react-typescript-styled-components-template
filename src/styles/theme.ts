@@ -13,8 +13,16 @@ const theme: DefaultTheme = {
     smoke: '#f6f6f6',
     black: '#4B4B4B',
   },
-  fontSizes: { extraLarge: '3rem', large: '2rem', medium: '1.2rem', small: '0.9rem', extraSmall: '0.5rem' },
-  fontWeights: { regular: 400, light: 300 },
+  fontSizes: {
+    xxl: '1.0rem',
+    xl: '0.6rem',
+    large: '0.45rem',
+    medium: '0.4rem',
+    small: '0.28rem',
+    xs: '0.25rem',
+    xxs: '0.21rem',
+  },
+  fontWeights: { light: 300, regular: 400, bold: 700 },
   fonts: ['Nunito Sans'],
   imageSizes: { large: '1920w', medium: '1366w', small: '750w' },
 }

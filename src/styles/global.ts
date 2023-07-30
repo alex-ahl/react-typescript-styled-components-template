@@ -13,17 +13,13 @@ export default createGlobalStyle`
 
     html {
         scroll-snap-type: y mandatory;
-        font-size: 16px;
+        font-size: 70px;
     }
-    
-
     
     body {
         font-family: ${({ theme }) => theme.fonts}, sans-serif;
-        font-size: ${({ theme }) => theme.fontSizes.medium};
         color: ${({ theme }) => theme.colors.main};
         background-color: ${({ theme }) => theme.colors.secondary};
+        line-height: 1.4;
     }
-
-
 `
