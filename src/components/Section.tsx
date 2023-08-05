@@ -1,24 +1,34 @@
-import { FC, ReactNode } from 'react'
+import { Dispatch, FC, HTMLProps, ReactNode, useEffect } from 'react'
 import styled from 'styled-components'
-import { device } from 'styles/breakpoints'
+import { useInView } from 'react-intersection-observer'
 
+import { device } from 'styles/breakpoints'
 import { baseHeightStyles } from 'styles/styles'
 
-interface SectionProps {
+interface SectionProps extends HTMLProps<HTMLDivElement> {
+  setIntersectingSectionId: Dispatch<string | undefined>
   left: ReactNode
   right: ReactNode
 }
 
-export const Section: FC<SectionProps> = ({ left, right }) => {
+export const Section: FC<SectionProps> = ({ setIntersectingSectionId, left, right, ...props }) => {
+  const { entry, ref, inView } = useInView({
+    threshold: 0.65,
+  })
+
+  useEffect(() => {
+    if (inView) setIntersectingSectionId(entry?.target.id)
+  }, [setIntersectingSectionId, inView, entry?.target.id])
+
   return (
-    <Container>
+    <Container ref={ref} {...props}>
       <Content>{left}</Content>
       <Content>{right}</Content>
     </Container>
   )
 }
 
-const Container = styled.div`
+const Container = styled.section`
   ${baseHeightStyles}
 
   display: flex;
