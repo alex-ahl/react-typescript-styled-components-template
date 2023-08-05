@@ -23,6 +23,10 @@ const TextWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 30px;
+
+  @media only screen and (${device.sm}) {
+    padding: 60px;
+  }
 `
 
 const maxWidth = css`
@@ -46,7 +50,7 @@ const Headline = styled.h2`
   }
 
   @media only screen and (${device.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.large};
+    font-size: ${({ theme }) => theme.fontSizes.xl};
   }
 
   @media only screen and (${device.md}) and (orientation: landscape) {
@@ -54,7 +58,7 @@ const Headline = styled.h2`
   }
 
   @media only screen and (${device.sm}) {
-    font-size: ${({ theme }) => theme.fontSizes.large};
+    font-size: ${({ theme }) => theme.fontSizes.medium};
   }
 `
 
@@ -76,7 +80,7 @@ const Introduction = styled.span`
   }
 
   @media only screen and (${device.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-size: ${({ theme }) => theme.fontSizes.medium};
   }
 
   @media only screen and (${device.md}) and (orientation: landscape) {
@@ -84,7 +88,7 @@ const Introduction = styled.span`
   }
 
   @media only screen and (${device.sm}) {
-    font-size: ${({ theme }) => theme.fontSizes.small};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 `
 
@@ -110,8 +114,8 @@ const TextStyle = styled.p`
   }
 
   @media only screen and (${device.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.xxs};
-    ${maxWidth}
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    max-width: 400px;
   }
 
   @media only screen and (${device.md}) and (orientation: landscape) {
