@@ -1,0 +1,10 @@
+FROM node:20.5
+WORKDIR /usr/app
+COPY package.json ./
+COPY yarn.lock ./
+COPY tsconfig.json ./
+RUN yarn
+ENV PATH=/usr/app/node_modules/.bin:$PATH
+COPY src ./src
+EXPOSE 3000
+ENTRYPOINT [ "yarn", "start" ]
